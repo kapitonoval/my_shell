@@ -16,10 +16,8 @@ echo "short_open_tag=On" >> /etc/opt/remi/php72/php.ini
 chkconfig php72-php-fpm on
 
 #сменить пользователя и группу на ec2-user
-awk '{gsub(/user = /,";user = ")}' /etc/opt/remi/php72/php-fpm.d/www.conf > t.conf
-awk '{gsub(/group =/,";group = ")}' t.conf > /etc/opt/remi/php72/php-fpm.d/www.conf
-echo "user = ec2-user" >> /etc/opt/remi/php72/php-fpm.d/www.conf && echo "group = ec2-user" >> /etc/opt/remi/php72/php-fpm.d/www.conf
-nano /etc/opt/remi/php72/php-fpm.d/www.conf
+sed 's/user = apache/user = ec2-user/g'  /etc/opt/remi/php72/php-fpm.d/www.conf > t.conf && sed 's/group = apache/group = ec2-user/g'  t.conf > /etc/opt/remi/php72/php-fpm.d/www.conf
+rm -f t.conf
 
 #запуск php-fpm
 
