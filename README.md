@@ -1,2 +1,2 @@
 # my_shell
-shell red head
+install shell script for amazon aws ec2
