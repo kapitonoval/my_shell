@@ -5,7 +5,7 @@ rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 service nginx stop
 
-yum -y install --skip-broken php72 php72-php php72-php-fpm php72-php-mysqli php72-soap php72-mysqlnd php72-xml php72-xmlrpc php72-mbstring -y
+yum -y install --skip-broken php72 php72-php php72-php-fpm php72-php-mysqli php72-soap php72-mysqlnd php72-xml php72-php-xml php72-xmlrpc php72-mbstring -y
 
 echo "short_open_tag=On" >> /etc/php.ini
 
